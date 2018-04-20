@@ -1,0 +1,17 @@
+server:
+  port: 8761
+#registerWithEureka 自己是一个server  就是自己注册自己  false
+security:  
+  basic:  
+    enabled: true  
+  user:  
+    name: admin  
+    password: 123456
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false   
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
